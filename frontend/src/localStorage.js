@@ -6,6 +6,9 @@ export const getCartItems = () => {
 };
 export const setCartItems = (cartItems) => {
   localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  console.log("cart is set");
+  window.dispatchEvent(new CustomEvent('cartUpdated'));
+
 };
 export const setUserInfo = ({
   _id = '',
